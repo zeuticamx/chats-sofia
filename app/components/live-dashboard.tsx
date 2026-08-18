@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Sidebar } from "./sidebar";
 import { CommandPalette } from "./command-palette";
 import { ConversationRow } from "./conversation-row";
@@ -9,10 +10,10 @@ import { JsonTreeView } from "./json-tree";
 import { StatCard } from "./stat-card";
 import { StatusBadge } from "./status";
 import { extractWaId, groupBySession, recordsToThreadItems } from "@/lib/conversations";
+import { useStoredUsuario } from "@/lib/auth";
 import type { ConversationRecord } from "@/lib/types";
 
 const POLL_INTERVAL_MS = 5000;
-const ASSIGNED_AGENT_ID = "fernando_01";
 
 function formatTime(iso: string) {
   return new Date(iso).toLocaleTimeString("es-AR", {
@@ -22,6 +23,11 @@ function formatTime(iso: string) {
 }
 
 export function LiveDashboard() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  /** Sesión pedida por URL (?session=…), p. ej. al venir desde una alerta. */
+  const sessionFromUrl = searchParams.get("session");
+  const assignedAgentId = useStoredUsuario();
   const [records, setRecords] = useState<ConversationRecord[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [selectedSession, setSelectedSession] = useState<string | null>(null);
@@ -45,6 +51,12 @@ export function LiveDashboard() {
       if (feedbackTimeoutRef.current) clearTimeout(feedbackTimeoutRef.current);
     };
   }, []);
+
+  useEffect(() => {
+    if (assignedAgentId === null) {
+      router.replace("/login");
+    }
+  }, [assignedAgentId, router]);
 
   useEffect(() => {
     let cancelled = false;
@@ -74,12 +86,21 @@ export function LiveDashboard() {
   }, []);
 
   const sessions = groupBySession(records ?? []);
-  const activeSessionId = selectedSession ?? sessions[0]?.sessionId ?? null;
+  const activeSessionId =
+    selectedSession ?? sessionFromUrl ?? sessions[0]?.sessionId ?? null;
   const activeSession = sessions.find((s) => s.sessionId === activeSessionId);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [activeSessionId, activeSession?.records.length]);
+
+  if (assignedAgentId === null) {
+    return (
+      <div className="flex flex-1 items-center justify-center font-mono text-xs text-text-600">
+        verificando sesión…
+      </div>
+    );
+  }
 
   if (error) {
     return (
@@ -115,7 +136,7 @@ export function LiveDashboard() {
     : 0;
 
   const handleHumanButton = async () => {
-    if (!activeSession) return;
+    if (!activeSession || !assignedAgentId) return;
     setLoading(true);
     try {
       const res = await fetch("/api/conversations/handle-human", {
@@ -123,7 +144,7 @@ export function LiveDashboard() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           wa_id: extractWaId(activeSession.sessionId),
-          assigned_agent_id: ASSIGNED_AGENT_ID,
+          assigned_agent_id: assignedAgentId,
         }),
       });
       const data = await res.json().catch(() => null);
@@ -170,7 +191,7 @@ export function LiveDashboard() {
   const canSendMessage = activeSession?.status === "human_active";
 
   const handleSendMessage = async () => {
-    if (!activeSession || !messageText.trim() || !canSendMessage) return;
+    if (!activeSession || !messageText.trim() || !canSendMessage || !assignedAgentId) return;
     setSendingMessage(true);
     try {
       const res = await fetch("/api/conversations/send-message", {
@@ -179,7 +200,7 @@ export function LiveDashboard() {
         body: JSON.stringify({
           wa_id: extractWaId(activeSession.sessionId),
           text: messageText.trim(),
-          assigned_agent_id: ASSIGNED_AGENT_ID,
+          assigned_agent_id: assignedAgentId,
         }),
       });
       const data = await res.json().catch(() => null);

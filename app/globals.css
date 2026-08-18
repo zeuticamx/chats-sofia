@@ -20,6 +20,20 @@
   --danger: #ef4444;
 }
 
+:root.light {
+  /* surfaces */
+  --bg-950: #ffffff;
+  --bg-900: #f8fafc;
+  --bg-800: #eef2f7;
+  --bg-700: #e2e8f0;
+  --bg-600: #cbd5e1;
+
+  /* text */
+  --text-100: #0f172a;
+  --text-400: #475569;
+  --text-600: #94a3b8;
+}
+
 @theme inline {
   --color-bg-950: var(--bg-950);
   --color-bg-900: var(--bg-900);
@@ -43,4 +57,5 @@
 body {
   background: var(--bg-950);
   color: var(--text-100);
+  transition: background-color 150ms, color 150ms;
 }
