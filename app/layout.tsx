@@ -14,8 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Global AI",
+  title: "OperativAI",
   description: "Portal para auditoria de agente AI",
+  icons: {
+    icon: "/operativai.ico",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

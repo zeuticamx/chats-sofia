@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import * as Dialog from "@radix-ui/react-dialog";
@@ -56,7 +57,14 @@ export function Sidebar() {
     >
       <div className="flex items-center justify-between px-3 py-3">
         {!collapsed && (
-          <span className="font-mono text-xs text-text-400">Global AI</span>
+          <Image
+            src="/imagenes/LOGO_OPERATIVAI.png"
+            alt="OperativAI"
+            width={240}
+            height={64}
+            className="w-40 h-auto"
+            priority
+          />
         )}
         <button
           onClick={() => setCollapsed((c) => !c)}
