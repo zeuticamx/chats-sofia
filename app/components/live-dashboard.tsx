@@ -137,6 +137,13 @@ export function LiveDashboard() {
 
   const handleHumanButton = async () => {
     if (!activeSession || !assignedAgentId) return;
+    if (!activeSession.sessionId.startsWith("sofi_")) {
+      showFeedback(
+        "error",
+        "Las conversaciones ajenas a Whastapp no pueden manipularse como Humano",
+      );
+      return;
+    }
     setLoading(true);
     try {
       const res = await fetch("/api/conversations/handle-human", {
