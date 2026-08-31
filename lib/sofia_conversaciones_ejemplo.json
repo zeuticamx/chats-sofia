@@ -1,0 +1,4407 @@
+[
+  {
+    "id": 555,
+    "session_id": "sofi_5214421234567",
+    "message": {
+      "type": "human",
+      "content": "Hola buenas tardes",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-25T10:02:50.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 556,
+    "session_id": "sofi_5214421234567",
+    "message": {
+      "type": "ai",
+      "content": "¡Hola, buenas tardes! 😊 Soy Sofía, tu asistente de Zeutica. ¿En qué te puedo apoyar el día de hoy?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-25T10:03:15.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 557,
+    "session_id": "sofi_5214421234567",
+    "message": {
+      "type": "human",
+      "content": "Me pueden dar precio de cubrebocas kn95",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-25T10:04:05.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 558,
+    "session_id": "sofi_5214421234567",
+    "message": {
+      "type": "ai",
+      "content": "¡Claro que sí! Déjame revisar el catálogo un momento 🔎",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-25T10:04:25.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 559,
+    "session_id": "sofi_5214421234567",
+    "message": {
+      "type": "ai",
+      "content": "Ya lo tengo. Manejamos el KN95 de 5 capas, certificado, en caja de 20 piezas. El precio varía según la cantidad:\n\n📦 100 a 499 piezas: $3.50 c/u\n📦 500 a 999 piezas: $3.00 c/u\n📦 1000 piezas o más: $2.50 c/u\n\n¿Cuántas piezas estarías necesitando?",
+      "tool_calls": [
+        {
+          "name": "catalogo_inteligente",
+          "args": {
+            "buscar": "Cubrebocas KN95"
+          },
+          "id": "call_qro01",
+          "type": "tool_call"
+        },
+        {
+          "name": "sofi_sql",
+          "args": {
+            "query": "select_precios_por_rango",
+            "producto": "Cubrebocas KN95"
+          },
+          "id": "call_qro02",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-25T10:04:55.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 560,
+    "session_id": "sofi_5214421234567",
+    "message": {
+      "type": "human",
+      "content": "¿Vienen en colores o solo blanco?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-25T10:06:05.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 561,
+    "session_id": "sofi_5214421234567",
+    "message": {
+      "type": "ai",
+      "content": "Buena pregunta. Los tenemos disponibles en blanco y negro, ambos al mismo precio. El color no afecta el costo, solo la disponibilidad de existencia.",
+      "tool_calls": [
+        {
+          "name": "catalogo_inteligente",
+          "args": {
+            "buscar": "Cubrebocas KN95",
+            "atributo": "colores_disponibles"
+          },
+          "id": "call_qro03",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-25T10:06:30.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 562,
+    "session_id": "sofi_5214421234567",
+    "message": {
+      "type": "human",
+      "content": "Perfecto, entonces blancos",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-25T10:07:10.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 563,
+    "session_id": "sofi_5214421234567",
+    "message": {
+      "type": "human",
+      "content": "Necesito 650 piezas",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-25T10:07:35.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 564,
+    "session_id": "sofi_5214421234567",
+    "message": {
+      "type": "ai",
+      "content": "¡Perfecto! Con 650 piezas entras en el rango de 500 a 999, así que el precio queda en $3.00 c/u.\n\n🧾 Resumen:\nCubrebocas KN95 blanco x650 pza — $3.00 c/u = $1,950.00 MXN\n\n¿Quieres agregar algún otro producto a esta cotización o la dejamos así?",
+      "tool_calls": [
+        {
+          "name": "sofi_sql",
+          "args": {
+            "query": "calcular_precio_por_cantidad",
+            "producto": "Cubrebocas KN95",
+            "cantidad": 650
+          },
+          "id": "call_qro04",
+          "type": "tool_call"
+        },
+        {
+          "name": "generar_cotizacion",
+          "args": {
+            "items": [
+              {
+                "producto": "Cubrebocas KN95",
+                "cantidad": 650,
+                "precio_unitario": 3.0,
+                "subtotal": 1950.0
+              }
+            ]
+          },
+          "id": "call_qro05",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-25T10:08:10.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 565,
+    "session_id": "sofi_5214421234567",
+    "message": {
+      "type": "human",
+      "content": "¿Ese precio ya incluye IVA?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-25T10:09:05.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 566,
+    "session_id": "sofi_5214421234567",
+    "message": {
+      "type": "ai",
+      "content": "El precio que te comparto es más IVA. En el documento formal ya te aparece el desglose completo con subtotal, IVA y total.",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-25T10:09:30.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 567,
+    "session_id": "sofi_5214421234567",
+    "message": {
+      "type": "human",
+      "content": "Ok, y ¿cuánto tardan en entregar?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-25T10:10:15.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 568,
+    "session_id": "sofi_5214421234567",
+    "message": {
+      "type": "ai",
+      "content": "Para Querétaro el tiempo estimado es de 2 a 3 días hábiles una vez confirmado el pago. Tenemos existencia disponible de esa cantidad. 📦",
+      "tool_calls": [
+        {
+          "name": "sofi_sql",
+          "args": {
+            "query": "consultar_existencia_y_tiempo_entrega",
+            "producto": "Cubrebocas KN95",
+            "cantidad": 650,
+            "destino": "Querétaro"
+          },
+          "id": "call_qro06",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-25T10:10:45.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 569,
+    "session_id": "sofi_5214421234567",
+    "message": {
+      "type": "human",
+      "content": "Está bien así, mándamela en pdf por favor",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-25T10:11:35.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 570,
+    "session_id": "sofi_5214421234567",
+    "message": {
+      "type": "ai",
+      "content": "¡Con gusto! Para generar tu cotización formal en PDF necesito algunos datos de facturación:\n\n🏢 Nombre de la empresa o razón social\n📍 Domicilio fiscal\n🧾 RFC\n\n¿Me los compartes?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-25T10:12:00.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 571,
+    "session_id": "sofi_5214421234567",
+    "message": {
+      "type": "human",
+      "content": "Claro, es Distribuidora López SA de CV",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-25T10:13:20.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 572,
+    "session_id": "sofi_5214421234567",
+    "message": {
+      "type": "human",
+      "content": "El domicilio es Av. Constituyentes 450, Col. Centro, Querétaro, Qro., CP 76000",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-25T10:14:00.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 573,
+    "session_id": "sofi_5214421234567",
+    "message": {
+      "type": "human",
+      "content": "Y el RFC es DLO980512AB3",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-25T10:14:30.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 574,
+    "session_id": "sofi_5214421234567",
+    "message": {
+      "type": "ai",
+      "content": "Gracias, déjame validar los datos y armar el documento 📝",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-25T10:14:50.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 575,
+    "session_id": "sofi_5214421234567",
+    "message": {
+      "type": "ai",
+      "content": "Antes de generarla, ¿me confirmas que los datos estén correctos?\n\n🏢 Distribuidora López SA de CV\n📍 Av. Constituyentes 450, Col. Centro, Querétaro, Qro., CP 76000\n🧾 RFC: DLO980512AB3\n\n¿Todo bien?",
+      "tool_calls": [
+        {
+          "name": "sofi_sql",
+          "args": {
+            "query": "registrar_datos_fiscales_cliente",
+            "empresa": "Distribuidora López SA de CV",
+            "rfc": "DLO980512AB3",
+            "domicilio": "Av. Constituyentes 450, Col. Centro, Querétaro, Qro., CP 76000"
+          },
+          "id": "call_qro07",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-25T10:15:20.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 576,
+    "session_id": "sofi_5214421234567",
+    "message": {
+      "type": "human",
+      "content": "Sí, todo correcto",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-25T10:16:20.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 577,
+    "session_id": "sofi_5214421234567",
+    "message": {
+      "type": "ai",
+      "content": "¡Perfecto, Lupita! 📄 Ya te llegó tu cotización COT-QRO-0231 por este mismo chat, a nombre de Distribuidora López SA de CV. Tiene una vigencia de 15 días.\n\n¿Hay algo más en lo que pueda ayudarte?",
+      "tool_calls": [
+        {
+          "name": "generar_cotizacion_pdf",
+          "args": {
+            "numero_cotizacion": "COT-QRO-0231",
+            "cliente": {
+              "empresa": "Distribuidora López SA de CV",
+              "domicilio": "Av. Constituyentes 450, Col. Centro, Querétaro, Qro., CP 76000",
+              "rfc": "DLO980512AB3"
+            },
+            "vigencia_dias": 15
+          },
+          "id": "call_qro08",
+          "type": "tool_call"
+        },
+        {
+          "name": "enviar_documento",
+          "args": {
+            "tipo": "cotizacion_pdf",
+            "numero_cotizacion": "COT-QRO-0231"
+          },
+          "id": "call_qro09",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-25T10:17:00.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 578,
+    "session_id": "sofi_5214421234567",
+    "message": {
+      "type": "human",
+      "content": "Ya me llegó, muchas gracias",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-25T10:18:10.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 579,
+    "session_id": "sofi_5214421234567",
+    "message": {
+      "type": "ai",
+      "content": "¡Con mucho gusto! 🙌 Cualquier duda o si decides avanzar con la compra, aquí estoy para apoyarte. Que tengas excelente tarde.",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-25T10:18:35.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 580,
+    "session_id": "sofi_5213398765432",
+    "message": {
+      "type": "human",
+      "content": "Buen día",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-26T11:15:45.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 581,
+    "session_id": "sofi_5213398765432",
+    "message": {
+      "type": "ai",
+      "content": "¡Buen día! 😊 Soy Sofía, asistente de Zeutica. ¿Cómo te puedo ayudar?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-26T11:16:10.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 582,
+    "session_id": "sofi_5213398765432",
+    "message": {
+      "type": "human",
+      "content": "Necesito cotizar guantes de nitrilo y cascos de seguridad",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-26T11:17:05.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 583,
+    "session_id": "sofi_5213398765432",
+    "message": {
+      "type": "ai",
+      "content": "¡Claro! Permíteme revisar ambos productos en el catálogo 🔎",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-26T11:17:25.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 584,
+    "session_id": "sofi_5213398765432",
+    "message": {
+      "type": "ai",
+      "content": "Los tengo disponibles:\n\n🧤 Guantes de nitrilo sin polvo, caja con 100 piezas (tallas S, M, L, XL)\n🪖 Casco de seguridad tipo I ABS con suspensión de 4 puntos\n\nPara darte el precio correcto necesito las cantidades. ¿Cuántas cajas de guantes y cuántos cascos ocupas?",
+      "tool_calls": [
+        {
+          "name": "catalogo_inteligente",
+          "args": {
+            "buscar": [
+              "Guantes de nitrilo",
+              "Cascos de seguridad"
+            ]
+          },
+          "id": "call_gdl01",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-26T11:18:00.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 585,
+    "session_id": "sofi_5213398765432",
+    "message": {
+      "type": "human",
+      "content": "20 cajas de guantes y 30 cascos",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-26T11:19:00.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 586,
+    "session_id": "sofi_5213398765432",
+    "message": {
+      "type": "ai",
+      "content": "Perfecto. ¿Qué talla de guantes necesitas y de qué color prefieres los cascos?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-26T11:19:25.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 587,
+    "session_id": "sofi_5213398765432",
+    "message": {
+      "type": "human",
+      "content": "Talla M, y los cascos en amarillo",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-26T11:20:15.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 588,
+    "session_id": "sofi_5213398765432",
+    "message": {
+      "type": "ai",
+      "content": "Anotado. Con esas cantidades te quedan estos precios:\n\n🧤 Guantes de nitrilo talla M: 20 cajas entra en el rango 10-49 → $165.00 c/u\n🪖 Casco amarillo: 30 piezas entra en el rango 20-49 → $195.00 c/u\n\n¿Los confirmo así?",
+      "tool_calls": [
+        {
+          "name": "sofi_sql",
+          "args": {
+            "query": "calcular_precio_por_cantidad",
+            "producto": "Guantes de nitrilo",
+            "presentacion": "caja 100 pza talla M",
+            "cantidad": 20
+          },
+          "id": "call_gdl02",
+          "type": "tool_call"
+        },
+        {
+          "name": "sofi_sql",
+          "args": {
+            "query": "calcular_precio_por_cantidad",
+            "producto": "Cascos de seguridad",
+            "color": "amarillo",
+            "cantidad": 30
+          },
+          "id": "call_gdl03",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-26T11:20:50.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 589,
+    "session_id": "sofi_5213398765432",
+    "message": {
+      "type": "human",
+      "content": "Oye, si subo a 50 cajas de guantes ¿baja el precio?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-26T11:22:00.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 590,
+    "session_id": "sofi_5213398765432",
+    "message": {
+      "type": "ai",
+      "content": "Sí. A partir de 50 cajas el precio baja a $148.00 c/u. La diferencia es de $17.00 por caja, así que si tu consumo lo justifica sí conviene subir el volumen.",
+      "tool_calls": [
+        {
+          "name": "sofi_sql",
+          "args": {
+            "query": "simular_precio_por_cantidad",
+            "producto": "Guantes de nitrilo",
+            "cantidad": 50
+          },
+          "id": "call_gdl04",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-26T11:22:30.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 591,
+    "session_id": "sofi_5213398765432",
+    "message": {
+      "type": "human",
+      "content": "Déjalo en 20 por ahora, es lo que necesito este mes",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-26T11:23:35.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 592,
+    "session_id": "sofi_5213398765432",
+    "message": {
+      "type": "ai",
+      "content": "Sin problema, lo dejo en 20 cajas. 👍",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-26T11:23:55.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 593,
+    "session_id": "sofi_5213398765432",
+    "message": {
+      "type": "human",
+      "content": "¿Los cascos ya traen la suspensión incluida?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-26T11:24:40.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 594,
+    "session_id": "sofi_5213398765432",
+    "message": {
+      "type": "ai",
+      "content": "Sí, el precio ya incluye la suspensión de 4 puntos con ajuste de matraca. También manejamos barbiquejo por separado si lo necesitas, en $28.00 c/u.",
+      "tool_calls": [
+        {
+          "name": "catalogo_inteligente",
+          "args": {
+            "buscar": "Cascos de seguridad",
+            "atributo": "accesorios_incluidos"
+          },
+          "id": "call_gdl05",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-26T11:25:10.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 595,
+    "session_id": "sofi_5213398765432",
+    "message": {
+      "type": "human",
+      "content": "No, así está bien",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-26T11:25:50.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 596,
+    "session_id": "sofi_5213398765432",
+    "message": {
+      "type": "ai",
+      "content": "🧾 Resumen de tu cotización:\n• Guantes de nitrilo talla M x20 cajas — $165.00 c/u = $3,300.00\n• Casco de seguridad amarillo x30 pza — $195.00 c/u = $5,850.00\n\n💰 Subtotal: $9,150.00 MXN + IVA\n\n¿Deseas agregar algún otro producto o te la envío en PDF?",
+      "tool_calls": [
+        {
+          "name": "sofi_sql",
+          "args": {
+            "query": "calcular_totales",
+            "items": [
+              {
+                "producto": "Guantes de nitrilo",
+                "cantidad": 20
+              },
+              {
+                "producto": "Cascos de seguridad",
+                "cantidad": 30
+              }
+            ]
+          },
+          "id": "call_gdl06",
+          "type": "tool_call"
+        },
+        {
+          "name": "generar_cotizacion",
+          "args": {
+            "items": [
+              {
+                "producto": "Guantes de nitrilo",
+                "cantidad": 20,
+                "unidad": "caja",
+                "precio_unitario": 165.0,
+                "subtotal": 3300.0
+              },
+              {
+                "producto": "Cascos de seguridad",
+                "cantidad": 30,
+                "precio_unitario": 195.0,
+                "subtotal": 5850.0
+              }
+            ],
+            "subtotal": 9150.0
+          },
+          "id": "call_gdl07",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-26T11:26:30.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 597,
+    "session_id": "sofi_5213398765432",
+    "message": {
+      "type": "human",
+      "content": "Envíamela en pdf, por favor",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-26T11:27:25.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 598,
+    "session_id": "sofi_5213398765432",
+    "message": {
+      "type": "ai",
+      "content": "¡Claro! Para dejarte lista la cotización formal me faltan estos datos:\n\n🏢 Nombre de la empresa o razón social\n📍 Domicilio fiscal\n🧾 RFC\n\n¿Me los compartes?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-26T11:27:50.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 599,
+    "session_id": "sofi_5213398765432",
+    "message": {
+      "type": "human",
+      "content": "Ferretería y Equipos del Occidente SA de CV",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-26T11:29:05.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 600,
+    "session_id": "sofi_5213398765432",
+    "message": {
+      "type": "human",
+      "content": "Av. Vallarta 2200, Col. Arcos Vallarta, Guadalajara, Jal., CP 44130",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-26T11:29:50.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 601,
+    "session_id": "sofi_5213398765432",
+    "message": {
+      "type": "human",
+      "content": "RFC FEO150730KX2",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-26T11:30:20.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 602,
+    "session_id": "sofi_5213398765432",
+    "message": {
+      "type": "ai",
+      "content": "Gracias, Javier. ¿Me confirmas también un correo para enviarte copia del documento?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-26T11:30:45.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 603,
+    "session_id": "sofi_5213398765432",
+    "message": {
+      "type": "human",
+      "content": "compras@ferrocidente.mx",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-26T11:31:35.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 604,
+    "session_id": "sofi_5213398765432",
+    "message": {
+      "type": "ai",
+      "content": "Listo, ya quedaron registrados tus datos:\n\n🏢 Ferretería y Equipos del Occidente SA de CV\n📍 Av. Vallarta 2200, Col. Arcos Vallarta, Guadalajara, Jal., CP 44130\n🧾 RFC: FEO150730KX2\n📧 compras@ferrocidente.mx\n\nGenerando tu documento...",
+      "tool_calls": [
+        {
+          "name": "sofi_sql",
+          "args": {
+            "query": "registrar_datos_fiscales_cliente",
+            "empresa": "Ferretería y Equipos del Occidente SA de CV",
+            "rfc": "FEO150730KX2",
+            "correo": "compras@ferrocidente.mx"
+          },
+          "id": "call_gdl08",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-26T11:32:05.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 605,
+    "session_id": "sofi_5213398765432",
+    "message": {
+      "type": "ai",
+      "content": "¡Listo, Javier! 📄 Tu cotización COT-GDL-0742 ya está en camino por este chat y también a tu correo. Vigencia de 15 días.\n\n¿Se te ofrece algo más?",
+      "tool_calls": [
+        {
+          "name": "generar_cotizacion_pdf",
+          "args": {
+            "numero_cotizacion": "COT-GDL-0742",
+            "cliente": {
+              "empresa": "Ferretería y Equipos del Occidente SA de CV",
+              "domicilio": "Av. Vallarta 2200, Col. Arcos Vallarta, Guadalajara, Jal., CP 44130",
+              "rfc": "FEO150730KX2"
+            },
+            "vigencia_dias": 15
+          },
+          "id": "call_gdl09",
+          "type": "tool_call"
+        },
+        {
+          "name": "enviar_documento",
+          "args": {
+            "tipo": "cotizacion_pdf",
+            "numero_cotizacion": "COT-GDL-0742",
+            "canales": [
+              "whatsapp",
+              "correo"
+            ]
+          },
+          "id": "call_gdl10",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-26T11:32:50.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 606,
+    "session_id": "sofi_5213398765432",
+    "message": {
+      "type": "human",
+      "content": "Ya la recibí, la reviso con el jefe de compras y te aviso",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-26T11:34:20.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 607,
+    "session_id": "sofi_5213398765432",
+    "message": {
+      "type": "ai",
+      "content": "¡Perfecto! Aquí quedo al pendiente. Si necesitan ajustar cantidades o agregar algo más, con gusto te genero una nueva versión. 🙌",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-26T11:34:45.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 608,
+    "session_id": "sofi_5218112345678",
+    "message": {
+      "type": "human",
+      "content": "Hola, buenos días",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T09:38:45.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 609,
+    "session_id": "sofi_5218112345678",
+    "message": {
+      "type": "ai",
+      "content": "¡Buenos días! 😊 Soy Sofía, asistente de Zeutica. ¿En qué te puedo ayudar?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T09:39:10.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 610,
+    "session_id": "sofi_5218112345678",
+    "message": {
+      "type": "human",
+      "content": "Quería preguntar si manejan esquema de distribución",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T09:40:05.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 611,
+    "session_id": "sofi_5218112345678",
+    "message": {
+      "type": "ai",
+      "content": "Sí, manejamos esquemas para distribuidores y clientes con consumo recurrente. ¿Me cuentas un poco más de lo que tienes en mente?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T09:40:35.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 612,
+    "session_id": "sofi_5218112345678",
+    "message": {
+      "type": "human",
+      "content": "Tenemos 6 sucursales de ferretería industrial en Nuevo León y Coahuila",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T09:41:50.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 613,
+    "session_id": "sofi_5218112345678",
+    "message": {
+      "type": "human",
+      "content": "Nos interesa manejar su línea de EPP en todas",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T09:42:25.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 614,
+    "session_id": "sofi_5218112345678",
+    "message": {
+      "type": "ai",
+      "content": "Suena a un proyecto interesante. 🙌 ¿Qué líneas te interesarían principalmente: protección respiratoria, guantes, calzado, o el catálogo completo?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T09:43:00.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 615,
+    "session_id": "sofi_5218112345678",
+    "message": {
+      "type": "human",
+      "content": "El catálogo completo, pero empezando por guantes y calzado",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T09:44:00.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 616,
+    "session_id": "sofi_5218112345678",
+    "message": {
+      "type": "ai",
+      "content": "Perfecto. Ya con eso me doy una idea del alcance. Te comento que los esquemas de distribución se manejan con condiciones especiales que se definen directamente con dirección, no con los precios de lista.",
+      "tool_calls": [
+        {
+          "name": "sofi_sql",
+          "args": {
+            "query": "verificar_esquema_distribucion",
+            "lineas": [
+              "guantes",
+              "calzado"
+            ],
+            "sucursales": 6
+          },
+          "id": "call_mty01",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T09:44:35.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 617,
+    "session_id": "sofi_5218112345678",
+    "message": {
+      "type": "human",
+      "content": "Quisiera hablar directamente con el dueño, tengo una propuesta de distribución para varias sucursales",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T09:45:45.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 618,
+    "session_id": "sofi_5218112345678",
+    "message": {
+      "type": "ai",
+      "content": "¡Por supuesto! Es exactamente el tipo de conversación que se debe llevar con dirección. Antes de canalizarte, ¿me compartes el nombre de tu empresa?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T09:46:15.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 619,
+    "session_id": "sofi_5218112345678",
+    "message": {
+      "type": "human",
+      "content": "Grupo Ferretero del Norte",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T09:47:10.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 620,
+    "session_id": "sofi_5218112345678",
+    "message": {
+      "type": "ai",
+      "content": "Gracias. ¿Y en qué horario te resulta más cómodo que te contacten?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T09:47:35.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 621,
+    "session_id": "sofi_5218112345678",
+    "message": {
+      "type": "human",
+      "content": "De 10 a 2 de la tarde, cualquier día entre semana",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T09:48:25.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 622,
+    "session_id": "sofi_5218112345678",
+    "message": {
+      "type": "ai",
+      "content": "Con gusto te comunico con nuestro equipo directivo para tratar el tema de distribución. Un asesor se pondrá en contacto contigo en breve por este mismo chat. 🙌",
+      "tool_calls": [
+        {
+          "name": "delegar_humano",
+          "args": {
+            "motivo": "cliente_solicita_hablar_con_dueno",
+            "prioridad": "alta",
+            "empresa": "Grupo Ferretero del Norte",
+            "horario_contacto": "10:00-14:00 entre semana"
+          },
+          "id": "call_mty02",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T09:48:55.000Z",
+    "status": "esperando_agente",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 623,
+    "session_id": "sofi_5218112345678",
+    "message": {
+      "type": "human",
+      "content": "Perfecto, quedo al pendiente",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T09:49:55.000Z",
+    "status": "esperando_agente",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 624,
+    "session_id": "sofi_5218112345678",
+    "message": {
+      "type": "ai",
+      "content": "Hola Ricardo, soy Arturo, gerente comercial de Zeutica. Vi tu solicitud sobre el esquema de distribución para Grupo Ferretero del Norte.",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T10:06:55.000Z",
+    "status": "agente",
+    "assigned_agent_id": "a7f0c9de-3b21-4c9a-9e02-1d5f6e8b2a10"
+  },
+  {
+    "id": 625,
+    "session_id": "sofi_5218112345678",
+    "message": {
+      "type": "ai",
+      "content": "Con gusto platicamos sobre la propuesta, ¿tienes unos minutos para una llamada hoy en la tarde?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T10:07:35.000Z",
+    "status": "agente",
+    "assigned_agent_id": "a7f0c9de-3b21-4c9a-9e02-1d5f6e8b2a10"
+  },
+  {
+    "id": 626,
+    "session_id": "sofi_5218112345678",
+    "message": {
+      "type": "human",
+      "content": "Sí, claro, después de las 4pm estoy libre",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T10:08:55.000Z",
+    "status": "agente",
+    "assigned_agent_id": "a7f0c9de-3b21-4c9a-9e02-1d5f6e8b2a10"
+  },
+  {
+    "id": 627,
+    "session_id": "sofi_5218112345678",
+    "message": {
+      "type": "ai",
+      "content": "Perfecto, te marco a las 4:30 a este mismo número. Voy a llevar preparado el esquema de precios por volumen y las condiciones de crédito que manejamos para distribuidores.",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T10:09:55.000Z",
+    "status": "agente",
+    "assigned_agent_id": "a7f0c9de-3b21-4c9a-9e02-1d5f6e8b2a10"
+  },
+  {
+    "id": 628,
+    "session_id": "sofi_5218112345678",
+    "message": {
+      "type": "human",
+      "content": "Excelente, ¿me pueden mandar algo por escrito antes para irlo revisando?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T10:11:05.000Z",
+    "status": "agente",
+    "assigned_agent_id": "a7f0c9de-3b21-4c9a-9e02-1d5f6e8b2a10"
+  },
+  {
+    "id": 629,
+    "session_id": "sofi_5218112345678",
+    "message": {
+      "type": "ai",
+      "content": "Claro, ahorita te envío la ficha del programa de distribución por correo. ¿A qué dirección te la mando?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T10:11:55.000Z",
+    "status": "agente",
+    "assigned_agent_id": "a7f0c9de-3b21-4c9a-9e02-1d5f6e8b2a10"
+  },
+  {
+    "id": 630,
+    "session_id": "sofi_5218112345678",
+    "message": {
+      "type": "human",
+      "content": "ricardo.villareal@gfnorte-ferretera.mx",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T10:13:00.000Z",
+    "status": "agente",
+    "assigned_agent_id": "a7f0c9de-3b21-4c9a-9e02-1d5f6e8b2a10"
+  },
+  {
+    "id": 631,
+    "session_id": "sofi_5218112345678",
+    "message": {
+      "type": "ai",
+      "content": "Listo, en un momento te llega. Nos hablamos a las 4:30 entonces. Gracias por el interés, Ricardo.",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T10:13:45.000Z",
+    "status": "agente",
+    "assigned_agent_id": "a7f0c9de-3b21-4c9a-9e02-1d5f6e8b2a10"
+  },
+  {
+    "id": 632,
+    "session_id": "sofi_5218112345678",
+    "message": {
+      "type": "human",
+      "content": "Gracias Arturo, ahí estamos",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T10:14:40.000Z",
+    "status": "agente",
+    "assigned_agent_id": "a7f0c9de-3b21-4c9a-9e02-1d5f6e8b2a10"
+  },
+  {
+    "id": 633,
+    "session_id": "sofi_5215587654321",
+    "message": {
+      "type": "human",
+      "content": "Buenas tardes",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T16:14:45.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 634,
+    "session_id": "sofi_5215587654321",
+    "message": {
+      "type": "ai",
+      "content": "¡Buenas tardes! 😊 Soy Sofía, asistente de Zeutica. ¿En qué te apoyo?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T16:15:10.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 635,
+    "session_id": "sofi_5215587654321",
+    "message": {
+      "type": "human",
+      "content": "Necesito precio de cubrebocas kn95",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T16:15:55.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 636,
+    "session_id": "sofi_5215587654321",
+    "message": {
+      "type": "ai",
+      "content": "Con gusto. El KN95 lo manejamos con precio escalonado:\n\n📦 100 a 499 piezas: $3.50 c/u\n📦 500 a 999 piezas: $3.00 c/u\n📦 1000 piezas o más: $2.50 c/u\n\n¿Qué cantidad estás considerando?",
+      "tool_calls": [
+        {
+          "name": "catalogo_inteligente",
+          "args": {
+            "buscar": "Cubrebocas KN95"
+          },
+          "id": "call_cdmx01",
+          "type": "tool_call"
+        },
+        {
+          "name": "sofi_sql",
+          "args": {
+            "query": "select_precios_por_rango",
+            "producto": "Cubrebocas KN95"
+          },
+          "id": "call_cdmx02",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T16:16:25.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 637,
+    "session_id": "sofi_5215587654321",
+    "message": {
+      "type": "human",
+      "content": "¿Manejan certificación? Es para un corporativo hospitalario",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T16:17:35.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 638,
+    "session_id": "sofi_5215587654321",
+    "message": {
+      "type": "ai",
+      "content": "Sí, el producto cuenta con certificado de conformidad y reporte de eficiencia de filtración. Podemos entregarte la documentación técnica junto con el pedido.",
+      "tool_calls": [
+        {
+          "name": "catalogo_inteligente",
+          "args": {
+            "buscar": "Cubrebocas KN95",
+            "atributo": "certificaciones"
+          },
+          "id": "call_cdmx03",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T16:18:05.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 639,
+    "session_id": "sofi_5215587654321",
+    "message": {
+      "type": "human",
+      "content": "Perfecto, eso era importante",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T16:18:55.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 640,
+    "session_id": "sofi_5215587654321",
+    "message": {
+      "type": "human",
+      "content": "Manejamos volumen grande, como 80,000 piezas mensuales",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T16:19:35.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 641,
+    "session_id": "sofi_5215587654321",
+    "message": {
+      "type": "ai",
+      "content": "Wow, es un volumen considerable. Déjame validar la política para ese rango 🔎",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T16:20:00.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 642,
+    "session_id": "sofi_5215587654321",
+    "message": {
+      "type": "ai",
+      "content": "Sandra, para un volumen de ese tamaño (80,000 piezas mensuales) los precios de lista ya no aplican: se maneja un esquema de suministro con condiciones especiales que autoriza directamente nuestra dirección comercial.",
+      "tool_calls": [
+        {
+          "name": "sofi_sql",
+          "args": {
+            "query": "verificar_umbral_volumen",
+            "producto": "Cubrebocas KN95",
+            "cantidad": 80000,
+            "periodicidad": "mensual"
+          },
+          "id": "call_cdmx04",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T16:20:35.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 643,
+    "session_id": "sofi_5215587654321",
+    "message": {
+      "type": "human",
+      "content": "¿Y eso cuánto tarda?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T16:21:30.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 644,
+    "session_id": "sofi_5215587654321",
+    "message": {
+      "type": "ai",
+      "content": "Es rápido, normalmente el mismo día te contactan. Antes de canalizarte, ¿me confirmas el nombre de tu empresa y si el suministro sería recurrente o por única vez?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T16:22:00.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 645,
+    "session_id": "sofi_5215587654321",
+    "message": {
+      "type": "human",
+      "content": "Sería recurrente, cada mes, somos Grupo Sanitas",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T16:23:05.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 646,
+    "session_id": "sofi_5215587654321",
+    "message": {
+      "type": "ai",
+      "content": "Gracias. ¿Y el volumen se entregaría en un solo destino o distribuido en varias sedes?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T16:23:35.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 647,
+    "session_id": "sofi_5215587654321",
+    "message": {
+      "type": "human",
+      "content": "En 4 sedes distintas dentro de la CDMX",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T16:24:30.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 648,
+    "session_id": "sofi_5215587654321",
+    "message": {
+      "type": "ai",
+      "content": "Perfecto, ya con esto tengo el panorama completo. Lo mejor es que te atienda directamente nuestra área comercial para ofrecerte condiciones especiales y armar el esquema de suministro recurrente. Ahorita te conecto. 🙌",
+      "tool_calls": [
+        {
+          "name": "delegar_humano",
+          "args": {
+            "motivo": "volumen_excede_umbral_autoservicio",
+            "producto": "Cubrebocas KN95",
+            "cantidad_solicitada": 80000,
+            "periodicidad": "mensual",
+            "empresa": "Grupo Sanitas",
+            "destinos": 4
+          },
+          "id": "call_cdmx05",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T16:25:05.000Z",
+    "status": "esperando_agente",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 649,
+    "session_id": "sofi_5215587654321",
+    "message": {
+      "type": "human",
+      "content": "Perfecto, quedo atenta",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T16:26:05.000Z",
+    "status": "esperando_agente",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 650,
+    "session_id": "sofi_5215587654321",
+    "message": {
+      "type": "ai",
+      "content": "Hola Sandra, soy Patricia del área comercial de Zeutica. Vi tu solicitud de 80,000 piezas mensuales para Grupo Sanitas.",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T16:50:45.000Z",
+    "status": "agente",
+    "assigned_agent_id": "5c2e9a41-8f10-4b77-9d3e-6a0c1b4f8899"
+  },
+  {
+    "id": 651,
+    "session_id": "sofi_5215587654321",
+    "message": {
+      "type": "ai",
+      "content": "Con gusto armamos un esquema especial. ¿Me confirmas si el requerimiento es en blanco, negro o mixto?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T16:51:30.000Z",
+    "status": "agente",
+    "assigned_agent_id": "5c2e9a41-8f10-4b77-9d3e-6a0c1b4f8899"
+  },
+  {
+    "id": 652,
+    "session_id": "sofi_5215587654321",
+    "message": {
+      "type": "human",
+      "content": "Mixto, aproximadamente 70% blanco y 30% negro",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T16:53:00.000Z",
+    "status": "agente",
+    "assigned_agent_id": "5c2e9a41-8f10-4b77-9d3e-6a0c1b4f8899"
+  },
+  {
+    "id": 653,
+    "session_id": "sofi_5215587654321",
+    "message": {
+      "type": "ai",
+      "content": "Perfecto. ¿Y manejan contrato anual o preferirían orden abierta con entregas parciales mensuales?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T16:54:00.000Z",
+    "status": "agente",
+    "assigned_agent_id": "5c2e9a41-8f10-4b77-9d3e-6a0c1b4f8899"
+  },
+  {
+    "id": 654,
+    "session_id": "sofi_5215587654321",
+    "message": {
+      "type": "human",
+      "content": "Orden abierta nos funciona mejor por temas de flujo",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T16:55:20.000Z",
+    "status": "agente",
+    "assigned_agent_id": "5c2e9a41-8f10-4b77-9d3e-6a0c1b4f8899"
+  },
+  {
+    "id": 655,
+    "session_id": "sofi_5215587654321",
+    "message": {
+      "type": "ai",
+      "content": "Entendido. Voy a preparar la propuesta con precio de contrato, calendario de entregas para las 4 sedes y condiciones de pago. Te la comparto mañana a primera hora.",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T16:56:30.000Z",
+    "status": "agente",
+    "assigned_agent_id": "5c2e9a41-8f10-4b77-9d3e-6a0c1b4f8899"
+  },
+  {
+    "id": 656,
+    "session_id": "sofi_5215587654321",
+    "message": {
+      "type": "human",
+      "content": "Muchas gracias Patricia, quedo al pendiente",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T16:57:35.000Z",
+    "status": "agente",
+    "assigned_agent_id": "5c2e9a41-8f10-4b77-9d3e-6a0c1b4f8899"
+  },
+  {
+    "id": 657,
+    "session_id": "sofi_5215587654321",
+    "message": {
+      "type": "ai",
+      "content": "A ti, Sandra. Cualquier duda mientras tanto, me escribes por aquí.",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-27T16:58:20.000Z",
+    "status": "agente",
+    "assigned_agent_id": "5c2e9a41-8f10-4b77-9d3e-6a0c1b4f8899"
+  },
+  {
+    "id": 658,
+    "session_id": "sofi_5219991122334",
+    "message": {
+      "type": "human",
+      "content": "Hola",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-28T13:02:45.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 659,
+    "session_id": "sofi_5219991122334",
+    "message": {
+      "type": "ai",
+      "content": "¡Hola! 😊 Soy Sofía, asistente de Zeutica. ¿En qué te puedo ayudar?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-28T13:03:10.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 660,
+    "session_id": "sofi_5219991122334",
+    "message": {
+      "type": "human",
+      "content": "Tengo un problema con un pedido",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-28T13:03:55.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 661,
+    "session_id": "sofi_5219991122334",
+    "message": {
+      "type": "ai",
+      "content": "Lamento escuchar eso. Cuéntame qué pasó y con gusto lo revisamos. 🙏",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-28T13:04:20.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 662,
+    "session_id": "sofi_5219991122334",
+    "message": {
+      "type": "human",
+      "content": "Me llegó incompleto el pedido de cascos que compré la semana pasada",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-28T13:05:20.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 663,
+    "session_id": "sofi_5219991122334",
+    "message": {
+      "type": "ai",
+      "content": "Entiendo, una disculpa por el inconveniente. ¿Recuerdas el número de pedido o el nombre con el que se hizo la compra?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-28T13:05:50.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 664,
+    "session_id": "sofi_5219991122334",
+    "message": {
+      "type": "human",
+      "content": "Fue a nombre de Mariana Ku, el 22 de agosto",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-28T13:07:00.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 665,
+    "session_id": "sofi_5219991122334",
+    "message": {
+      "type": "ai",
+      "content": "Gracias, ya localicé el pedido PED-MID-0912 del 22 de agosto. Aparece registrado con 40 cascos.",
+      "tool_calls": [
+        {
+          "name": "sofi_sql",
+          "args": {
+            "query": "buscar_pedido",
+            "cliente": "Mariana Ku",
+            "fecha": "2026-08-22"
+          },
+          "id": "call_mid01",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-28T13:07:35.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 666,
+    "session_id": "sofi_5219991122334",
+    "message": {
+      "type": "human",
+      "content": "Exacto, pero solo llegaron 25",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-28T13:08:30.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 667,
+    "session_id": "sofi_5219991122334",
+    "message": {
+      "type": "ai",
+      "content": "Comprendo, faltarían 15 piezas entonces. ¿La caja venía sellada o notaste que llegó abierta?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-28T13:09:00.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 668,
+    "session_id": "sofi_5219991122334",
+    "message": {
+      "type": "human",
+      "content": "Venía sellada, por eso no entiendo qué pasó",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-28T13:10:00.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 669,
+    "session_id": "sofi_5219991122334",
+    "message": {
+      "type": "human",
+      "content": "Y la verdad ya es la segunda vez que nos pasa algo así, no está bien",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-28T13:10:40.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 670,
+    "session_id": "sofi_5219991122334",
+    "message": {
+      "type": "ai",
+      "content": "Tienes toda la razón en molestarte, Mariana, y lamento mucho que se haya repetido. Este caso ya no lo puedo resolver yo directamente, así que voy a conectarte de inmediato con nuestro equipo de atención para que revisen el embarque y te den una solución. 😟",
+      "tool_calls": [
+        {
+          "name": "delegar_humano",
+          "args": {
+            "motivo": "queja_pedido_incompleto",
+            "referencia_pedido": "PED-MID-0912",
+            "piezas_faltantes": 15,
+            "reincidencia": true,
+            "prioridad": "alta"
+          },
+          "id": "call_mid02",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-28T13:11:20.000Z",
+    "status": "esperando_agente",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 671,
+    "session_id": "sofi_5219991122334",
+    "message": {
+      "type": "human",
+      "content": "Ok, espero su respuesta, es urgente porque lo necesito para mañana",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-28T13:12:15.000Z",
+    "status": "esperando_agente",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 672,
+    "session_id": "sofi_5219991122334",
+    "message": {
+      "type": "ai",
+      "content": "Entiendo la urgencia y ya quedó marcado como prioritario. En un momento te atienden.",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-28T13:12:40.000Z",
+    "status": "esperando_agente",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 673,
+    "session_id": "sofi_5219991122334",
+    "message": {
+      "type": "ai",
+      "content": "Hola Mariana, soy Luis de servicio al cliente. Una disculpa por el inconveniente, ya estoy revisando el pedido PED-MID-0912.",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-28T13:27:30.000Z",
+    "status": "agente",
+    "assigned_agent_id": "e18a4f2b-902c-4d55-8b21-3f6a9c0d5e77"
+  },
+  {
+    "id": 674,
+    "session_id": "sofi_5219991122334",
+    "message": {
+      "type": "ai",
+      "content": "Efectivamente veo una diferencia entre lo facturado y lo que salió de almacén. ¿Me puedes compartir una foto de la guía y de la caja como llegó?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-28T13:28:30.000Z",
+    "status": "agente",
+    "assigned_agent_id": "e18a4f2b-902c-4d55-8b21-3f6a9c0d5e77"
+  },
+  {
+    "id": 675,
+    "session_id": "sofi_5219991122334",
+    "message": {
+      "type": "human",
+      "content": "[Imagen adjunta]",
+      "tool_calls": [],
+      "additional_kwargs": {
+        "media_type": "image",
+        "media_url": "https://media.zeutica-whatsapp.example/incidencias/inc_3c81ab.jpg",
+        "caption": "Así llegó la caja con la guía"
+      },
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-28T13:31:30.000Z",
+    "status": "agente",
+    "assigned_agent_id": "e18a4f2b-902c-4d55-8b21-3f6a9c0d5e77"
+  },
+  {
+    "id": 676,
+    "session_id": "sofi_5219991122334",
+    "message": {
+      "type": "ai",
+      "content": "Gracias, con eso es suficiente. Ya levanté la incidencia INC-0455 y confirmé el faltante con almacén.",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-28T13:35:30.000Z",
+    "status": "agente",
+    "assigned_agent_id": "e18a4f2b-902c-4d55-8b21-3f6a9c0d5e77"
+  },
+  {
+    "id": 677,
+    "session_id": "sofi_5219991122334",
+    "message": {
+      "type": "ai",
+      "content": "Te propongo lo siguiente: hoy mismo sale el envío de las 15 piezas faltantes con entrega para mañana antes de las 12, sin costo de flete. ¿Te funciona?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-28T13:36:40.000Z",
+    "status": "agente",
+    "assigned_agent_id": "e18a4f2b-902c-4d55-8b21-3f6a9c0d5e77"
+  },
+  {
+    "id": 678,
+    "session_id": "sofi_5219991122334",
+    "message": {
+      "type": "human",
+      "content": "Sí, eso me funciona, gracias",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-28T13:38:10.000Z",
+    "status": "agente",
+    "assigned_agent_id": "e18a4f2b-902c-4d55-8b21-3f6a9c0d5e77"
+  },
+  {
+    "id": 679,
+    "session_id": "sofi_5219991122334",
+    "message": {
+      "type": "ai",
+      "content": "Perfecto, ya quedó programado. Te comparto la guía en cuanto la genere almacén, en aproximadamente una hora.",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-28T13:39:05.000Z",
+    "status": "agente",
+    "assigned_agent_id": "e18a4f2b-902c-4d55-8b21-3f6a9c0d5e77"
+  },
+  {
+    "id": 680,
+    "session_id": "sofi_5219991122334",
+    "message": {
+      "type": "human",
+      "content": "Muy bien, y ojalá se revise para que no vuelva a pasar",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-28T13:40:20.000Z",
+    "status": "agente",
+    "assigned_agent_id": "e18a4f2b-902c-4d55-8b21-3f6a9c0d5e77"
+  },
+  {
+    "id": 681,
+    "session_id": "sofi_5219991122334",
+    "message": {
+      "type": "ai",
+      "content": "Totalmente de acuerdo. El caso ya está reportado con el responsable de almacén para revisar el proceso de verificación antes del sellado. Gracias por la paciencia, Mariana.",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-28T13:41:20.000Z",
+    "status": "agente",
+    "assigned_agent_id": "e18a4f2b-902c-4d55-8b21-3f6a9c0d5e77"
+  },
+  {
+    "id": 682,
+    "session_id": "sofi_5219991122334",
+    "message": {
+      "type": "human",
+      "content": "Gracias Luis",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-28T13:42:10.000Z",
+    "status": "agente",
+    "assigned_agent_id": "e18a4f2b-902c-4d55-8b21-3f6a9c0d5e77"
+  },
+  {
+    "id": 683,
+    "session_id": "sofi_5216645566778",
+    "message": {
+      "type": "human",
+      "content": "Buenos días, ¿manejan chalecos reflectantes?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-29T10:00:45.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 684,
+    "session_id": "sofi_5216645566778",
+    "message": {
+      "type": "ai",
+      "content": "¡Buenos días! 😊 Sí, claro. Déjame revisar el catálogo 🔎",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-29T10:01:10.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 685,
+    "session_id": "sofi_5216645566778",
+    "message": {
+      "type": "ai",
+      "content": "Manejamos dos versiones:\n\n🦺 Chaleco de malla con cintas reflejantes — desde $65.00 c/u\n🦺 Chaleco de poliéster tipo brigadista con bolsas — desde $145.00 c/u\n\n¿Cuál te interesa y para cuántas personas?",
+      "tool_calls": [
+        {
+          "name": "catalogo_inteligente",
+          "args": {
+            "buscar": "Chalecos reflectantes"
+          },
+          "id": "call_tij01",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-29T10:01:45.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 686,
+    "session_id": "sofi_5216645566778",
+    "message": {
+      "type": "human",
+      "content": "El de malla, para 120 personas",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-29T10:02:45.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 687,
+    "session_id": "sofi_5216645566778",
+    "message": {
+      "type": "ai",
+      "content": "Perfecto. Con 120 piezas entras en el rango de 100 a 249, así que el precio queda en $58.00 c/u.\n\n🧾 Chaleco de malla reflejante x120 pza — $58.00 c/u = $6,960.00 MXN + IVA\n\n¿Necesitas algún color en específico?",
+      "tool_calls": [
+        {
+          "name": "sofi_sql",
+          "args": {
+            "query": "calcular_precio_por_cantidad",
+            "producto": "Chaleco de malla reflejante",
+            "cantidad": 120
+          },
+          "id": "call_tij02",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-29T10:03:20.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 688,
+    "session_id": "sofi_5216645566778",
+    "message": {
+      "type": "human",
+      "content": "Verde limón, y ¿se les puede poner el logo de la empresa?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-29T10:04:30.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 689,
+    "session_id": "sofi_5216645566778",
+    "message": {
+      "type": "ai",
+      "content": "Sí, manejamos serigrafía. El costo adicional es de $22.00 por pieza a una tinta, con tiempo extra de 4 días hábiles.",
+      "tool_calls": [
+        {
+          "name": "catalogo_inteligente",
+          "args": {
+            "buscar": "Servicio de serigrafía",
+            "atributo": "costo_por_pieza"
+          },
+          "id": "call_tij03",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-29T10:05:00.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 690,
+    "session_id": "sofi_5216645566778",
+    "message": {
+      "type": "human",
+      "content": "Déjame consultarlo, por lo pronto sin logo",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-29T10:06:05.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 691,
+    "session_id": "sofi_5216645566778",
+    "message": {
+      "type": "ai",
+      "content": "Sin problema, lo dejo sin serigrafía. Si después lo autorizan, te genero la cotización actualizada. 👍",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-29T10:06:30.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 692,
+    "session_id": "sofi_5216645566778",
+    "message": {
+      "type": "human",
+      "content": "Va, mándame la cotización así",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-29T10:07:20.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 693,
+    "session_id": "sofi_5216645566778",
+    "message": {
+      "type": "ai",
+      "content": "Con gusto. Para el documento formal necesito:\n\n🏢 Razón social\n📍 Domicilio fiscal\n🧾 RFC",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-29T10:07:45.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 694,
+    "session_id": "sofi_5216645566778",
+    "message": {
+      "type": "human",
+      "content": "Constructora Baja Integral SA de CV, Blvd. Agua Caliente 4558, Col. Aviación, Tijuana, B.C., CP 22014, RFC CBI170224MN9",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-29T10:09:35.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 695,
+    "session_id": "sofi_5216645566778",
+    "message": {
+      "type": "ai",
+      "content": "¡Listo, Óscar! 📄 Ya te envié la cotización COT-TIJ-0184 a nombre de Constructora Baja Integral SA de CV.\n\n¿Alguna otra cosa en la que te apoye?",
+      "tool_calls": [
+        {
+          "name": "sofi_sql",
+          "args": {
+            "query": "registrar_datos_fiscales_cliente",
+            "empresa": "Constructora Baja Integral SA de CV",
+            "rfc": "CBI170224MN9"
+          },
+          "id": "call_tij04",
+          "type": "tool_call"
+        },
+        {
+          "name": "generar_cotizacion_pdf",
+          "args": {
+            "numero_cotizacion": "COT-TIJ-0184",
+            "items": [
+              {
+                "producto": "Chaleco de malla reflejante verde limón",
+                "cantidad": 120,
+                "precio_unitario": 58.0,
+                "subtotal": 6960.0
+              }
+            ]
+          },
+          "id": "call_tij05",
+          "type": "tool_call"
+        },
+        {
+          "name": "enviar_documento",
+          "args": {
+            "tipo": "cotizacion_pdf",
+            "numero_cotizacion": "COT-TIJ-0184"
+          },
+          "id": "call_tij06",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-29T10:10:20.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 696,
+    "session_id": "sofi_5216645566778",
+    "message": {
+      "type": "human",
+      "content": "Gracias, la reviso y te digo",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-29T10:11:30.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 697,
+    "session_id": "sofi_5216645566778",
+    "message": {
+      "type": "ai",
+      "content": "Perfecto, aquí quedo al pendiente. 🙌",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-29T10:11:50.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 698,
+    "session_id": "sofi_5216645566778",
+    "message": {
+      "type": "human",
+      "content": "Ya me convence la cotización de los chalecos reflectantes, ¿cómo le hago para el pago?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-29T11:41:50.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 699,
+    "session_id": "sofi_5216645566778",
+    "message": {
+      "type": "ai",
+      "content": "¡Excelente noticia, Óscar! 🙌 Déjame traerte los datos bancarios.",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-29T11:42:15.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 700,
+    "session_id": "sofi_5216645566778",
+    "message": {
+      "type": "ai",
+      "content": "Puedes realizar tu depósito o transferencia a la siguiente cuenta:\n\n🏦 Banco: BBVA\n👤 Beneficiario: Zeutica Equipos de Protección S.A. de C.V.\n💳 CLABE: 012180001234567895\n📄 Referencia: COT-TIJ-0184\n💰 Total con IVA: $8,073.60 MXN\n\nEn cuanto hagas el pago, envíame la foto o captura de tu comprobante para confirmarlo. ✅",
+      "tool_calls": [
+        {
+          "name": "enviar_datos_bancarios",
+          "args": {
+            "numero_cotizacion": "COT-TIJ-0184",
+            "monto_total": 8073.6
+          },
+          "id": "call_tij07",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-29T11:42:45.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 701,
+    "session_id": "sofi_5216645566778",
+    "message": {
+      "type": "human",
+      "content": "¿Aceptan pago con tarjeta?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-29T11:43:45.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 702,
+    "session_id": "sofi_5216645566778",
+    "message": {
+      "type": "ai",
+      "content": "Sí, también manejamos pago con tarjeta mediante liga de pago, aunque en ese caso aplica una comisión del 3.5%. La transferencia no tiene ningún costo adicional.",
+      "tool_calls": [
+        {
+          "name": "sofi_sql",
+          "args": {
+            "query": "consultar_metodos_pago"
+          },
+          "id": "call_tij08",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-29T11:44:15.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 703,
+    "session_id": "sofi_5216645566778",
+    "message": {
+      "type": "human",
+      "content": "Entonces mejor transferencia",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-29T11:45:10.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 704,
+    "session_id": "sofi_5216645566778",
+    "message": {
+      "type": "ai",
+      "content": "Buena elección 👍 Cualquier cosa aquí estoy.",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-29T11:45:30.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 705,
+    "session_id": "sofi_5216645566778",
+    "message": {
+      "type": "human",
+      "content": "Perfecto, en un rato hago la transferencia",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-29T11:46:40.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 706,
+    "session_id": "sofi_5216645566778",
+    "message": {
+      "type": "ai",
+      "content": "Claro, aquí quedo al pendiente de tu comprobante 😊",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-29T11:47:05.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 707,
+    "session_id": "sofi_5216645566778",
+    "message": {
+      "type": "human",
+      "content": "¿Hasta qué hora reciben pagos para que salga hoy el envío?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-29T11:48:35.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 708,
+    "session_id": "sofi_5216645566778",
+    "message": {
+      "type": "ai",
+      "content": "Si el comprobante nos llega antes de las 2:00 pm, el pedido sale el mismo día. Después de esa hora se programa para el siguiente día hábil.",
+      "tool_calls": [
+        {
+          "name": "sofi_sql",
+          "args": {
+            "query": "consultar_horario_corte_embarques"
+          },
+          "id": "call_tij09",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-29T11:49:05.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 709,
+    "session_id": "sofi_5216645566778",
+    "message": {
+      "type": "human",
+      "content": "Ok, ahorita la hago entonces",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-29T11:50:00.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 710,
+    "session_id": "sofi_5216645566778",
+    "message": {
+      "type": "ai",
+      "content": "Perfecto, quedo atenta. 🙌",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-29T11:50:20.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 711,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "human",
+      "content": "Hola buen día, quiero cotizar lentes de seguridad y tapones auditivos",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T11:20:45.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 712,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "ai",
+      "content": "¡Buen día! 😊 Con gusto, permíteme revisar ambos productos 🔎",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T11:21:10.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 713,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "ai",
+      "content": "Los tengo disponibles:\n\n🥽 Lente de seguridad policarbonato antiempañante — desde $48.00 c/u\n🎧 Tapón auditivo de espuma con cordón, bolsa c/200 pares — desde $340.00 la bolsa\n\n¿Qué cantidades necesitas de cada uno?",
+      "tool_calls": [
+        {
+          "name": "catalogo_inteligente",
+          "args": {
+            "buscar": [
+              "Lentes de seguridad",
+              "Tapones auditivos"
+            ]
+          },
+          "id": "call_pue01",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T11:21:45.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 714,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "human",
+      "content": "300 lentes y 5 bolsas de tapones",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T11:22:45.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 715,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "ai",
+      "content": "Perfecto:\n\n🥽 Lentes: 300 pza entra en el rango 250-499 → $41.00 c/u = $12,300.00\n🎧 Tapones: 5 bolsas en rango 1-9 → $340.00 c/u = $1,700.00\n\n💰 Subtotal: $14,000.00 MXN + IVA\n\n¿Los lentes los quieres claros u oscuros?",
+      "tool_calls": [
+        {
+          "name": "sofi_sql",
+          "args": {
+            "query": "calcular_precio_por_cantidad",
+            "producto": "Lentes de seguridad",
+            "cantidad": 300
+          },
+          "id": "call_pue02",
+          "type": "tool_call"
+        },
+        {
+          "name": "sofi_sql",
+          "args": {
+            "query": "calcular_precio_por_cantidad",
+            "producto": "Tapones auditivos",
+            "cantidad": 5
+          },
+          "id": "call_pue03",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T11:23:25.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 716,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "human",
+      "content": "Mitad claros y mitad oscuros",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T11:24:25.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 717,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "ai",
+      "content": "Anotado: 150 claros y 150 oscuros, mismo precio para ambos. 👍",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T11:24:50.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 718,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "human",
+      "content": "¿Me puedes bajar los tapones si llevo 10 bolsas?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T11:25:55.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 719,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "ai",
+      "content": "Sí, a partir de 10 bolsas el precio baja a $305.00 c/u. Serían $3,050.00 por las 10 en lugar de $3,400.00.",
+      "tool_calls": [
+        {
+          "name": "sofi_sql",
+          "args": {
+            "query": "simular_precio_por_cantidad",
+            "producto": "Tapones auditivos",
+            "cantidad": 10
+          },
+          "id": "call_pue04",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T11:26:25.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 720,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "human",
+      "content": "Perfecto, déjalo en 10 bolsas entonces",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T11:27:20.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 721,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "ai",
+      "content": "🧾 Cotización actualizada:\n• Lentes de seguridad (150 claros / 150 oscuros) x300 — $41.00 c/u = $12,300.00\n• Tapones auditivos x10 bolsas — $305.00 c/u = $3,050.00\n\n💰 Subtotal: $15,350.00 MXN + IVA\n\n¿Te la genero en PDF?",
+      "tool_calls": [
+        {
+          "name": "generar_cotizacion",
+          "args": {
+            "items": [
+              {
+                "producto": "Lentes de seguridad",
+                "cantidad": 300,
+                "precio_unitario": 41.0,
+                "subtotal": 12300.0
+              },
+              {
+                "producto": "Tapones auditivos",
+                "cantidad": 10,
+                "unidad": "bolsa",
+                "precio_unitario": 305.0,
+                "subtotal": 3050.0
+              }
+            ],
+            "subtotal": 15350.0
+          },
+          "id": "call_pue05",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T11:28:00.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 722,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "human",
+      "content": "Sí por favor",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T11:28:50.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 723,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "ai",
+      "content": "Para el documento necesito:\n\n🏢 Razón social\n📍 Domicilio fiscal\n🧾 RFC",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T11:29:15.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 724,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "human",
+      "content": "Manufacturas Angelópolis SA de CV, Calle 11 Sur 3502, Col. Santa Cruz, Puebla, Pue., CP 72400, RFC MAN190815PQ4",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T11:31:10.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 725,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "ai",
+      "content": "¡Listo, Diana! 📄 Ya te envié la cotización COT-PUE-0299 por $17,806.00 MXN con IVA incluido.",
+      "tool_calls": [
+        {
+          "name": "sofi_sql",
+          "args": {
+            "query": "registrar_datos_fiscales_cliente",
+            "empresa": "Manufacturas Angelópolis SA de CV",
+            "rfc": "MAN190815PQ4"
+          },
+          "id": "call_pue06",
+          "type": "tool_call"
+        },
+        {
+          "name": "generar_cotizacion_pdf",
+          "args": {
+            "numero_cotizacion": "COT-PUE-0299",
+            "total_con_iva": 17806.0
+          },
+          "id": "call_pue07",
+          "type": "tool_call"
+        },
+        {
+          "name": "enviar_documento",
+          "args": {
+            "tipo": "cotizacion_pdf",
+            "numero_cotizacion": "COT-PUE-0299"
+          },
+          "id": "call_pue08",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T11:31:55.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 726,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "human",
+      "content": "Gracias, ¿me puedes pasar los datos para el depósito?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T11:34:55.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 727,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "ai",
+      "content": "Claro:\n\n🏦 Banco: BBVA\n👤 Beneficiario: Zeutica Equipos de Protección S.A. de C.V.\n💳 CLABE: 012180001234567895\n📄 Referencia: COT-PUE-0299\n💰 Total: $17,806.00 MXN\n\nCuando hagas el pago mándame el comprobante y lo verifico. ✅",
+      "tool_calls": [
+        {
+          "name": "enviar_datos_bancarios",
+          "args": {
+            "numero_cotizacion": "COT-PUE-0299",
+            "monto_total": 17806.0
+          },
+          "id": "call_pue09",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T11:35:25.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 728,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "human",
+      "content": "Perfecto, ahorita lo hago",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T11:36:35.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 729,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "human",
+      "content": "[Imagen adjunta]",
+      "tool_calls": [],
+      "additional_kwargs": {
+        "media_type": "image",
+        "media_url": "https://media.zeutica-whatsapp.example/comprobantes/comp_0af31c.jpg",
+        "caption": "Ya deposité"
+      },
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T12:08:15.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 730,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "ai",
+      "content": "¡Gracias, Diana! Estoy revisando tu comprobante... dame un momento. 🔍",
+      "tool_calls": [
+        {
+          "name": "verificar_comprobante_pago",
+          "args": {
+            "numero_cotizacion": "COT-PUE-0299",
+            "monto_cotizado": 17806.0
+          },
+          "id": "call_pue10",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T12:08:45.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 731,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "ai",
+      "content": "✅ Tu comprobante coincide con el monto cotizado de $17,806.00 MXN. Voy a pasarlo con nuestro equipo para confirmar el depósito en definitiva y cerrar tu pedido.",
+      "tool_calls": [
+        {
+          "name": "verificar_comprobante_pago",
+          "args": {
+            "numero_cotizacion": "COT-PUE-0299",
+            "monto_cotizado": 17806.0,
+            "monto_detectado": 17806.0,
+            "coincide": true
+          },
+          "id": "call_pue11",
+          "type": "tool_call"
+        },
+        {
+          "name": "delegar_humano",
+          "args": {
+            "motivo": "confirmar_deposito_y_cerrar_venta",
+            "numero_cotizacion": "COT-PUE-0299"
+          },
+          "id": "call_pue12",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T12:09:25.000Z",
+    "status": "esperando_agente",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 732,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "human",
+      "content": "Muy bien, gracias",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T12:10:55.000Z",
+    "status": "esperando_agente",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 733,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "ai",
+      "content": "Hola Diana, soy Carla de administración. Ya validé el depósito en el estado de cuenta.",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T12:23:55.000Z",
+    "status": "agente",
+    "assigned_agent_id": "9b3d1e6a-4c88-4a02-8e1f-2d7b0a3c5f44"
+  },
+  {
+    "id": 734,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "ai",
+      "content": "Confirmamos tu pago de $17,806.00, tu pedido queda cerrado y lo estaremos preparando para envío. ¡Gracias por tu compra! 📦",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T12:24:35.000Z",
+    "status": "agente",
+    "assigned_agent_id": "9b3d1e6a-4c88-4a02-8e1f-2d7b0a3c5f44"
+  },
+  {
+    "id": 735,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "human",
+      "content": "Muchas gracias, quedo al pendiente del envío",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T12:25:45.000Z",
+    "status": "agente",
+    "assigned_agent_id": "9b3d1e6a-4c88-4a02-8e1f-2d7b0a3c5f44"
+  },
+  {
+    "id": 736,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "ai",
+      "content": "Con gusto. Tu factura te llega hoy mismo al correo y la guía de rastreo en cuanto salga el embarque, mañana por la mañana.",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T12:26:40.000Z",
+    "status": "agente",
+    "assigned_agent_id": "9b3d1e6a-4c88-4a02-8e1f-2d7b0a3c5f44"
+  },
+  {
+    "id": 737,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "human",
+      "content": "Perfecto, ¿el envío llega a la planta o a oficinas?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T12:28:00.000Z",
+    "status": "agente",
+    "assigned_agent_id": "9b3d1e6a-4c88-4a02-8e1f-2d7b0a3c5f44"
+  },
+  {
+    "id": 738,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "ai",
+      "content": "En la orden viene la dirección de la Col. Santa Cruz. ¿Quieres que lo redirija a otra dirección?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T12:28:50.000Z",
+    "status": "agente",
+    "assigned_agent_id": "9b3d1e6a-4c88-4a02-8e1f-2d7b0a3c5f44"
+  },
+  {
+    "id": 739,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "human",
+      "content": "No, ahí está bien, esa es la planta",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T12:29:55.000Z",
+    "status": "agente",
+    "assigned_agent_id": "9b3d1e6a-4c88-4a02-8e1f-2d7b0a3c5f44"
+  },
+  {
+    "id": 740,
+    "session_id": "sofi_5212223344556",
+    "message": {
+      "type": "ai",
+      "content": "Perfecto, ahí se entrega entonces. Cualquier cosa, aquí estamos. 🙌",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-30T12:30:40.000Z",
+    "status": "agente",
+    "assigned_agent_id": "9b3d1e6a-4c88-4a02-8e1f-2d7b0a3c5f44"
+  },
+  {
+    "id": 741,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "human",
+      "content": "Hola, buenos días",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T08:40:45.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 742,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "ai",
+      "content": "¡Buenos días! 😊 Soy Sofía, asistente de Zeutica. ¿En qué te ayudo?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T08:41:10.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 743,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "human",
+      "content": "Ya tengo mi cotización COT-CUN-0147 y quiero proceder al pago",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T08:42:05.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 744,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "ai",
+      "content": "¡Perfecto, Roberto! Ya la tengo aquí: arneses de seguridad y líneas de vida, por un total de $6,800.00 MXN con IVA incluido.",
+      "tool_calls": [
+        {
+          "name": "sofi_sql",
+          "args": {
+            "query": "consultar_cotizacion",
+            "numero_cotizacion": "COT-CUN-0147"
+          },
+          "id": "call_cun01",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T08:42:40.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 745,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "human",
+      "content": "Exacto, ¿me pasas los datos bancarios?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T08:43:30.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 746,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "ai",
+      "content": "Claro:\n\n🏦 Banco: BBVA\n👤 Beneficiario: Zeutica Equipos de Protección S.A. de C.V.\n💳 CLABE: 012180001234567895\n📄 Referencia: COT-CUN-0147\n💰 Total: $6,800.00 MXN\n\nCuando hagas la transferencia mándame el comprobante. ✅",
+      "tool_calls": [
+        {
+          "name": "enviar_datos_bancarios",
+          "args": {
+            "numero_cotizacion": "COT-CUN-0147",
+            "monto_total": 6800.0
+          },
+          "id": "call_cun02",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T08:44:00.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 747,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "human",
+      "content": "Ok, ahorita la hago",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T08:45:00.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 748,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "human",
+      "content": "[Imagen adjunta]",
+      "tool_calls": [],
+      "additional_kwargs": {
+        "media_type": "image",
+        "media_url": "https://media.zeutica-whatsapp.example/comprobantes/comp_77bd12.jpg",
+        "caption": "Ahí está mi pago"
+      },
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T09:14:10.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 749,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "ai",
+      "content": "Gracias, Roberto, dame un momento para revisar tu comprobante. 🔍",
+      "tool_calls": [
+        {
+          "name": "verificar_comprobante_pago",
+          "args": {
+            "numero_cotizacion": "COT-CUN-0147",
+            "monto_cotizado": 6800.0
+          },
+          "id": "call_cun03",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T09:14:40.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 750,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "ai",
+      "content": "⚠️ Reviso tu comprobante y el monto depositado es de $6,300.00 MXN, pero tu cotización es por $6,800.00 MXN. Faltarían $500.00 para completar el pago. ¿Podrías confirmarme si hiciste el depósito completo o si hace falta un complemento?",
+      "tool_calls": [
+        {
+          "name": "verificar_comprobante_pago",
+          "args": {
+            "numero_cotizacion": "COT-CUN-0147",
+            "monto_cotizado": 6800.0,
+            "monto_detectado": 6300.0,
+            "diferencia": 500.0,
+            "coincide": false
+          },
+          "id": "call_cun04",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T09:15:25.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 751,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "human",
+      "content": "¿Cómo? Yo pagué lo que decía la cotización",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T09:16:35.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 752,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "ai",
+      "content": "Déjame verificar el desglose para descartar cualquier confusión, dame un segundo 🔎",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T09:17:00.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 753,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "ai",
+      "content": "Ya vi el detalle: la cotización incluye 4 arneses ($1,450.00 c/u) más 2 líneas de vida ($500.00 c/u), lo que da $6,800.00 con IVA. En tu comprobante veo $6,300.00, que corresponde al total sin una de las líneas de vida.",
+      "tool_calls": [
+        {
+          "name": "sofi_sql",
+          "args": {
+            "query": "desglosar_cotizacion",
+            "numero_cotizacion": "COT-CUN-0147"
+          },
+          "id": "call_cun05",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T09:17:45.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 754,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "human",
+      "content": "Ah tienes razón, se me pasó un producto, ahorita hago el depósito de lo que falta",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T09:19:15.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 755,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "ai",
+      "content": "Sin problema 😊 Puedes hacer el complemento de $500.00 a la misma cuenta y con la misma referencia.",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T09:19:45.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 756,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "human",
+      "content": "¿No hay problema con que sean dos transferencias?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T09:20:50.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 757,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "ai",
+      "content": "Para nada, mientras ambas lleven la referencia COT-CUN-0147 se aplican al mismo pedido sin ningún inconveniente.",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T09:21:20.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 758,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "human",
+      "content": "Perfecto",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T09:22:05.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 759,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "ai",
+      "content": "Perfecto, en cuanto hagas el complemento envíame el comprobante para confirmarlo 😊",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T09:22:30.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 760,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "human",
+      "content": "[Imagen adjunta]",
+      "tool_calls": [],
+      "additional_kwargs": {
+        "media_type": "image",
+        "media_url": "https://media.zeutica-whatsapp.example/comprobantes/comp_44ea90.jpg",
+        "caption": "Ya deposité lo que faltaba"
+      },
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T09:28:50.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 761,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "ai",
+      "content": "✅ Listo, ahora sí el total coincide con tu cotización de $6,800.00 MXN. Voy a turnarlo con nuestro equipo para confirmar el depósito y cerrar tu pedido.",
+      "tool_calls": [
+        {
+          "name": "verificar_comprobante_pago",
+          "args": {
+            "numero_cotizacion": "COT-CUN-0147",
+            "monto_cotizado": 6800.0,
+            "monto_detectado_total": 6800.0,
+            "coincide": true,
+            "nota": "pago_completado_en_dos_partes"
+          },
+          "id": "call_cun06",
+          "type": "tool_call"
+        },
+        {
+          "name": "delegar_humano",
+          "args": {
+            "motivo": "confirmar_deposito_y_cerrar_venta",
+            "numero_cotizacion": "COT-CUN-0147"
+          },
+          "id": "call_cun07",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T09:29:35.000Z",
+    "status": "esperando_agente",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 762,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "human",
+      "content": "Perfecto, gracias",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T09:30:55.000Z",
+    "status": "esperando_agente",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 763,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "ai",
+      "content": "Hola Roberto, soy Diego de administración. Ya validé las dos transferencias en el estado de cuenta.",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T09:43:55.000Z",
+    "status": "agente",
+    "assigned_agent_id": "c5d8f210-6a4b-4e19-9c02-8b1d3a7e6f55"
+  },
+  {
+    "id": 764,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "ai",
+      "content": "Confirmamos tu pago completo de $6,800.00, tu pedido queda cerrado y en preparación para envío. ¡Gracias!",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T09:44:35.000Z",
+    "status": "agente",
+    "assigned_agent_id": "c5d8f210-6a4b-4e19-9c02-8b1d3a7e6f55"
+  },
+  {
+    "id": 765,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "human",
+      "content": "Excelente, gracias",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T09:45:50.000Z",
+    "status": "agente",
+    "assigned_agent_id": "c5d8f210-6a4b-4e19-9c02-8b1d3a7e6f55"
+  },
+  {
+    "id": 766,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "human",
+      "content": "¿Cuándo llegaría a Cancún?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T09:46:30.000Z",
+    "status": "agente",
+    "assigned_agent_id": "c5d8f210-6a4b-4e19-9c02-8b1d3a7e6f55"
+  },
+  {
+    "id": 767,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "ai",
+      "content": "El tiempo estimado para la zona es de 3 a 4 días hábiles. En cuanto salga el embarque te comparto la guía de rastreo por este mismo chat.",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T09:47:30.000Z",
+    "status": "agente",
+    "assigned_agent_id": "c5d8f210-6a4b-4e19-9c02-8b1d3a7e6f55"
+  },
+  {
+    "id": 768,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "human",
+      "content": "Va, quedo pendiente. ¿Y la factura?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T09:48:40.000Z",
+    "status": "agente",
+    "assigned_agent_id": "c5d8f210-6a4b-4e19-9c02-8b1d3a7e6f55"
+  },
+  {
+    "id": 769,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "ai",
+      "content": "La factura se emite hoy mismo y te llega al correo que tenemos registrado. Si necesitas que la mandemos a otro, me avisas.",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T09:49:30.000Z",
+    "status": "agente",
+    "assigned_agent_id": "c5d8f210-6a4b-4e19-9c02-8b1d3a7e6f55"
+  },
+  {
+    "id": 770,
+    "session_id": "sofi_5219988877766",
+    "message": {
+      "type": "human",
+      "content": "Al mismo está bien, gracias Diego",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T09:50:35.000Z",
+    "status": "agente",
+    "assigned_agent_id": "c5d8f210-6a4b-4e19-9c02-8b1d3a7e6f55"
+  },
+  {
+    "id": 771,
+    "session_id": "sofi_5216625566789",
+    "message": {
+      "type": "human",
+      "content": "Hola buenas tardes",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T14:05:45.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 772,
+    "session_id": "sofi_5216625566789",
+    "message": {
+      "type": "ai",
+      "content": "¡Buenas tardes! 😊 Soy Sofía, asistente de Zeutica. ¿En qué te puedo apoyar?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T14:06:10.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 773,
+    "session_id": "sofi_5216625566789",
+    "message": {
+      "type": "human",
+      "content": "Quisiera cotizar botas de seguridad con casquillo",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T14:07:00.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 774,
+    "session_id": "sofi_5216625566789",
+    "message": {
+      "type": "ai",
+      "content": "¡Claro que sí! Déjame revisar el catálogo 🔎",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T14:07:20.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 775,
+    "session_id": "sofi_5216625566789",
+    "message": {
+      "type": "ai",
+      "content": "Manejamos la bota dieléctrica con casquillo de poliamida, suela antiderrapante, tallas del 25 al 30. El precio varía según la cantidad:\n\n📦 1 a 9 pares: $450.00 c/u\n📦 10 a 49 pares: $410.00 c/u\n📦 50 pares o más: $380.00 c/u\n\n¿Cuántos pares necesitas?",
+      "tool_calls": [
+        {
+          "name": "catalogo_inteligente",
+          "args": {
+            "buscar": "Botas de seguridad con casquillo"
+          },
+          "id": "call_hmo01",
+          "type": "tool_call"
+        },
+        {
+          "name": "sofi_sql",
+          "args": {
+            "query": "select_precios_por_rango",
+            "producto": "Botas de seguridad con casquillo"
+          },
+          "id": "call_hmo02",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T14:07:55.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 776,
+    "session_id": "sofi_5216625566789",
+    "message": {
+      "type": "human",
+      "content": "¿Son dieléctricas? Es para personal de mantenimiento eléctrico",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T14:09:00.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 777,
+    "session_id": "sofi_5216625566789",
+    "message": {
+      "type": "ai",
+      "content": "Sí, el modelo cuenta con certificación dieléctrica y casquillo no metálico, justamente para trabajo con riesgo eléctrico.",
+      "tool_calls": [
+        {
+          "name": "catalogo_inteligente",
+          "args": {
+            "buscar": "Botas de seguridad con casquillo",
+            "atributo": "certificaciones"
+          },
+          "id": "call_hmo03",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T14:09:30.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 778,
+    "session_id": "sofi_5216625566789",
+    "message": {
+      "type": "human",
+      "content": "Perfecto. Necesito 60 pares",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T14:10:25.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 779,
+    "session_id": "sofi_5216625566789",
+    "message": {
+      "type": "ai",
+      "content": "Muy bien. ¿Me compartes el desglose de tallas o lo dejamos como surtido estándar?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T14:10:50.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 780,
+    "session_id": "sofi_5216625566789",
+    "message": {
+      "type": "human",
+      "content": "Surtido estándar está bien",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T14:11:40.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 781,
+    "session_id": "sofi_5216625566789",
+    "message": {
+      "type": "ai",
+      "content": "¡Perfecto! Con 60 pares entras en el rango de 50 o más, así que el precio queda en $380.00 c/u.\n\n🧾 Resumen:\nBota dieléctrica con casquillo x60 pares — $380.00 c/u = $22,800.00 MXN + IVA\n\n¿Te la genero en PDF?",
+      "tool_calls": [
+        {
+          "name": "sofi_sql",
+          "args": {
+            "query": "calcular_precio_por_cantidad",
+            "producto": "Botas de seguridad con casquillo",
+            "cantidad": 60
+          },
+          "id": "call_hmo04",
+          "type": "tool_call"
+        },
+        {
+          "name": "generar_cotizacion",
+          "args": {
+            "items": [
+              {
+                "producto": "Bota dieléctrica con casquillo",
+                "cantidad": 60,
+                "precio_unitario": 380.0,
+                "subtotal": 22800.0
+              }
+            ]
+          },
+          "id": "call_hmo05",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T14:12:20.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 782,
+    "session_id": "sofi_5216625566789",
+    "message": {
+      "type": "human",
+      "content": "Me interesa comprarlas, ¿me pueden hacer algún descuento por la cantidad que voy a pedir?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T14:13:30.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 783,
+    "session_id": "sofi_5216625566789",
+    "message": {
+      "type": "ai",
+      "content": "Déjame revisar la política de precios para tu caso, un momento 🔎",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T14:13:55.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 784,
+    "session_id": "sofi_5216625566789",
+    "message": {
+      "type": "ai",
+      "content": "Entiendo tu interés, Antonio 🙌 Te comento que yo no estoy facultado para autorizar descuentos adicionales a los precios ya escalonados; sin embargo, un asesor puede revisar tu caso a detalle y darte seguimiento personalizado.",
+      "tool_calls": [
+        {
+          "name": "sofi_sql",
+          "args": {
+            "query": "verificar_politica_descuentos",
+            "producto": "Botas de seguridad con casquillo",
+            "cantidad": 60
+          },
+          "id": "call_hmo06",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T14:14:30.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 785,
+    "session_id": "sofi_5216625566789",
+    "message": {
+      "type": "human",
+      "content": "Pero estoy comprando 60 pares, no es poca cosa",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T14:15:30.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 786,
+    "session_id": "sofi_5216625566789",
+    "message": {
+      "type": "ai",
+      "content": "Lo sé y valoro mucho el tamaño de tu pedido. El precio de $380.00 ya es el nivel de mayoreo más bajo del tabulador, y cualquier ajuste por debajo requiere autorización que yo no puedo otorgar.",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T14:16:05.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 787,
+    "session_id": "sofi_5216625566789",
+    "message": {
+      "type": "human",
+      "content": "Pues no me parece, quiero hablar con un superior",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T14:17:00.000Z",
+    "status": "bot",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 788,
+    "session_id": "sofi_5216625566789",
+    "message": {
+      "type": "ai",
+      "content": "En unos momentos un asesor especializado tomará la conversación, recuerda que tu satisfacción es nuestra prioridad",
+      "tool_calls": [
+        {
+          "name": "delegar_humano",
+          "args": {
+            "motivo": "cliente_solicita_descuento_y_superior",
+            "numero_cotizacion": "COT-HMO-0356",
+            "producto": "Bota dieléctrica con casquillo",
+            "cantidad": 60,
+            "sentimiento": "inconforme"
+          },
+          "id": "call_hmo07",
+          "type": "tool_call"
+        }
+      ],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T14:17:30.000Z",
+    "status": "esperando_agente",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 789,
+    "session_id": "sofi_5216625566789",
+    "message": {
+      "type": "human",
+      "content": "Está bien, aquí espero",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T14:18:40.000Z",
+    "status": "esperando_agente",
+    "assigned_agent_id": null
+  },
+  {
+    "id": 790,
+    "session_id": "sofi_5216625566789",
+    "message": {
+      "type": "ai",
+      "content": "Hola Antonio, he revisado tu solicitud y lamento informarte que no podemos otorgar un descuento a la cotización que realizaste, pero permíteme guiarte y platicarte en qué situaciones nos es posible otorgarte algún descuento o compensación.",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T14:33:30.000Z",
+    "status": "agente",
+    "assigned_agent_id": "f2a91c34-7d05-4e88-b3a1-2c6f0d9e4477"
+  },
+  {
+    "id": 791,
+    "session_id": "sofi_5216625566789",
+    "message": {
+      "type": "human",
+      "content": "Muchas gracias, dime como puedo mejorar la cotización para generar mejores precios",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T14:34:35.000Z",
+    "status": "agente",
+    "assigned_agent_id": "f2a91c34-7d05-4e88-b3a1-2c6f0d9e4477"
+  },
+  {
+    "id": 792,
+    "session_id": "sofi_5216625566789",
+    "message": {
+      "type": "ai",
+      "content": "Con gusto. Hay tres caminos que sí podemos autorizar: consolidar el pedido a 100 pares o más, incluir otras líneas de EPP en la misma orden, o firmar una orden abierta anual con entregas parciales.",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T14:36:05.000Z",
+    "status": "agente",
+    "assigned_agent_id": "f2a91c34-7d05-4e88-b3a1-2c6f0d9e4477"
+  },
+  {
+    "id": 793,
+    "session_id": "sofi_5216625566789",
+    "message": {
+      "type": "human",
+      "content": "La orden abierta me interesa, tenemos consumo constante todo el año",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T14:37:30.000Z",
+    "status": "agente",
+    "assigned_agent_id": "f2a91c34-7d05-4e88-b3a1-2c6f0d9e4477"
+  },
+  {
+    "id": 794,
+    "session_id": "sofi_5216625566789",
+    "message": {
+      "type": "ai",
+      "content": "Es la mejor opción para tu caso. Con volumen anual comprometido bajamos el precio de la bota a $352.00 y te congelamos el precio 12 meses aunque haya ajustes de lista.",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T14:38:45.000Z",
+    "status": "agente",
+    "assigned_agent_id": "f2a91c34-7d05-4e88-b3a1-2c6f0d9e4477"
+  },
+  {
+    "id": 795,
+    "session_id": "sofi_5216625566789",
+    "message": {
+      "type": "human",
+      "content": "Suena bien, ¿qué necesitan de nuestro lado?",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T14:39:55.000Z",
+    "status": "agente",
+    "assigned_agent_id": "f2a91c34-7d05-4e88-b3a1-2c6f0d9e4477"
+  },
+  {
+    "id": 796,
+    "session_id": "sofi_5216625566789",
+    "message": {
+      "type": "ai",
+      "content": "Un estimado de consumo anual y los datos fiscales de la empresa. Con eso te preparo la propuesta de orden abierta y la revisamos juntos.",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T14:40:55.000Z",
+    "status": "agente",
+    "assigned_agent_id": "f2a91c34-7d05-4e88-b3a1-2c6f0d9e4477"
+  },
+  {
+    "id": 797,
+    "session_id": "sofi_5216625566789",
+    "message": {
+      "type": "human",
+      "content": "Perfecto, mañana te paso el estimado con mi jefe de compras",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T14:42:15.000Z",
+    "status": "agente",
+    "assigned_agent_id": "f2a91c34-7d05-4e88-b3a1-2c6f0d9e4477"
+  },
+  {
+    "id": 798,
+    "session_id": "sofi_5216625566789",
+    "message": {
+      "type": "ai",
+      "content": "Excelente, Antonio. Quedo al pendiente y te agradezco la apertura para encontrar la mejor alternativa.",
+      "tool_calls": [],
+      "additional_kwargs": {},
+      "response_metadata": {},
+      "invalid_tool_calls": []
+    },
+    "created_at": "2026-08-31T14:43:05.000Z",
+    "status": "agente",
+    "assigned_agent_id": "f2a91c34-7d05-4e88-b3a1-2c6f0d9e4477"
+  }
+]

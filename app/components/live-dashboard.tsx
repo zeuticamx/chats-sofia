@@ -11,6 +11,7 @@ import { StatCard } from "./stat-card";
 import { StatusBadge } from "./status";
 import { extractWaId, groupBySession, recordsToThreadItems } from "@/lib/conversations";
 import { useStoredUsuario } from "@/lib/auth";
+import { MOCK_CONVERSATIONS } from "@/lib/mock-conversations";
 import type { ConversationRecord } from "@/lib/types";
 
 const POLL_INTERVAL_MS = 5000;
@@ -67,7 +68,7 @@ export function LiveDashboard() {
         if (!res.ok) throw new Error(`status ${res.status}`);
         const data: ConversationRecord[] = await res.json();
         if (!cancelled) {
-          setRecords(data);
+          setRecords([...MOCK_CONVERSATIONS, ...data]);
           setError(null);
         }
       } catch (e) {
