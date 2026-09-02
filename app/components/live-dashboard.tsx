@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { CalendarDays, X } from "lucide-react";
 import { Sidebar } from "./sidebar";
 import { CommandPalette } from "./command-palette";
 import { ConversationRow } from "./conversation-row";
@@ -11,10 +12,11 @@ import { StatCard } from "./stat-card";
 import { StatusBadge } from "./status";
 import { extractWaId, groupBySession, recordsToThreadItems } from "@/lib/conversations";
 import { useStoredUsuario } from "@/lib/auth";
-import { MOCK_CONVERSATIONS } from "@/lib/mock-conversations";
-import type { ConversationRecord } from "@/lib/types";
+import { useConversationRecords } from "@/lib/use-conversations";
+import { formatDayLabel, localDayKey, todayKey } from "@/lib/metrics";
 
-const POLL_INTERVAL_MS = 5000;
+/** Valor del filtro de día: "all" o una clave local YYYY-MM-DD. */
+const ALL_DAYS = "all";
 
 function formatTime(iso: string) {
   return new Date(iso).toLocaleTimeString("es-AR", {
@@ -29,9 +31,9 @@ export function LiveDashboard() {
   /** Sesión pedida por URL (?session=…), p. ej. al venir desde una alerta. */
   const sessionFromUrl = searchParams.get("session");
   const assignedAgentId = useStoredUsuario();
-  const [records, setRecords] = useState<ConversationRecord[] | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const { records, error } = useConversationRecords();
   const [selectedSession, setSelectedSession] = useState<string | null>(null);
+  const [dayFilter, setDayFilter] = useState<string>(ALL_DAYS);
   const [loading, setLoading] = useState(false);
   const [messageText, setMessageText] = useState("");
   const [sendingMessage, setSendingMessage] = useState(false);
@@ -59,36 +61,31 @@ export function LiveDashboard() {
     }
   }, [assignedAgentId, router]);
 
-  useEffect(() => {
-    let cancelled = false;
-
-    async function load() {
-      try {
-        const res = await fetch("/api/conversations", { cache: "no-store" });
-        if (!res.ok) throw new Error(`status ${res.status}`);
-        const data: ConversationRecord[] = await res.json();
-        if (!cancelled) {
-          setRecords([...MOCK_CONVERSATIONS, ...data]);
-          setError(null);
-        }
-      } catch (e) {
-        if (!cancelled) {
-          setError(e instanceof Error ? e.message : "error desconocido");
-        }
-      }
-    }
-
-    load();
-    const id = setInterval(load, POLL_INTERVAL_MS);
-    return () => {
-      cancelled = true;
-      clearInterval(id);
-    };
-  }, []);
-
   const sessions = groupBySession(records ?? []);
+
+  // Días de interacción disponibles (más reciente primero) y cuántas sesiones tocaron cada uno.
+  const sessionsByDay = new Map<string, number>();
+  for (const s of sessions) {
+    const days = new Set(s.records.map((r) => localDayKey(r.created_at)));
+    for (const d of days) sessionsByDay.set(d, (sessionsByDay.get(d) ?? 0) + 1);
+  }
+  const availableDays = [...sessionsByDay.keys()].sort().reverse();
+  const today = todayKey();
+
+  const visibleSessions =
+    dayFilter === ALL_DAYS
+      ? sessions
+      : sessions.filter((s) =>
+          s.records.some((r) => localDayKey(r.created_at) === dayFilter),
+        );
+
+  // La sesión activa debe existir dentro del filtro; si no, cae a la primera visible.
   const activeSessionId =
-    selectedSession ?? sessionFromUrl ?? sessions[0]?.sessionId ?? null;
+    [selectedSession, sessionFromUrl].find(
+      (id) => id && visibleSessions.some((s) => s.sessionId === id),
+    ) ??
+    visibleSessions[0]?.sessionId ??
+    null;
   const activeSession = sessions.find((s) => s.sessionId === activeSessionId);
 
   useEffect(() => {
@@ -127,10 +124,7 @@ export function LiveDashboard() {
     );
   }
 
-  const today = new Date().toDateString();
-  const sessionsToday = sessions.filter(
-    (s) => new Date(s.lastTimestamp).toDateString() === today,
-  ).length;
+  const sessionsToday = sessionsByDay.get(today) ?? 0;
   const needsHuman = sessions.filter((s) => s.status === "human_active").length;
   const autoPct = sessions.length
     ? Math.round(((sessions.length - needsHuman) / sessions.length) * 100)
@@ -247,7 +241,37 @@ export function LiveDashboard() {
 
         <div className="flex flex-1 overflow-hidden">
           <aside className="flex w-80 shrink-0 flex-col overflow-y-auto border-r border-bg-700 bg-bg-900">
-            {sessions.map((s) => (
+            <div className="sticky top-0 z-10 flex items-center gap-2 border-b border-bg-700 bg-bg-900 px-3 py-2">
+              <CalendarDays size={14} className="shrink-0 text-text-600" aria-hidden />
+              <label htmlFor="day-filter" className="sr-only">
+                Filtrar conversaciones por día de interacción
+              </label>
+              <select
+                id="day-filter"
+                value={dayFilter}
+                onChange={(e) => setDayFilter(e.target.value)}
+                className="min-w-0 flex-1 cursor-pointer rounded border border-bg-700 bg-bg-950 px-2 py-1.5 font-mono text-[11px] text-text-100 focus:border-bg-500 focus:outline-none"
+              >
+                <option value={ALL_DAYS}>Todos los días ({sessions.length})</option>
+                {availableDays.map((d) => (
+                  <option key={d} value={d}>
+                    {d === today ? "Hoy" : formatDayLabel(d)} ({sessionsByDay.get(d)})
+                  </option>
+                ))}
+              </select>
+              {dayFilter !== ALL_DAYS && (
+                <button
+                  onClick={() => setDayFilter(ALL_DAYS)}
+                  title="Quitar filtro de día"
+                  aria-label="Quitar filtro de día"
+                  className="rounded p-1 text-text-600 hover:bg-bg-800 hover:text-text-100"
+                >
+                  <X size={14} />
+                </button>
+              )}
+            </div>
+
+            {visibleSessions.map((s) => (
               <ConversationRow
                 key={s.sessionId}
                 active={s.sessionId === activeSessionId}
@@ -259,9 +283,11 @@ export function LiveDashboard() {
                 onClick={() => setSelectedSession(s.sessionId)}
               />
             ))}
-            {sessions.length === 0 && (
+            {visibleSessions.length === 0 && (
               <div className="p-3 font-mono text-xs text-text-600">
-                sin sesiones registradas
+                {sessions.length === 0
+                  ? "sin sesiones registradas"
+                  : "sin conversaciones ese día"}
               </div>
             )}
           </aside>

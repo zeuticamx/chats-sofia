@@ -18,6 +18,15 @@
   --success-bg: #22c55e14;
   --warning: #f59e0b;
   --danger: #ef4444;
+
+  /* dataviz — serie única (azul) y rampa ordinal para el embudo.
+     Validadas contra bg-800 (#1e293b) con scripts/validate_palette.js */
+  --series-1: #3987e5;
+  --ord-1: #1c5cab;
+  --ord-2: #2a78d6;
+  --ord-3: #5598e7;
+  --ord-4: #86b6ef;
+  --grid: #334155;
 }
 
 :root.light {
@@ -32,6 +41,14 @@
   --text-100: #0f172a;
   --text-400: #475569;
   --text-600: #94a3b8;
+
+  /* dataviz — validadas contra bg-800 claro (#eef2f7) */
+  --series-1: #2a78d6;
+  --ord-1: #6da7ec;
+  --ord-2: #3987e5;
+  --ord-3: #256abf;
+  --ord-4: #184f95;
+  --grid: #e2e8f0;
 }
 
 @theme inline {
@@ -49,6 +66,13 @@
   --color-success-bg: var(--success-bg);
   --color-warning: var(--warning);
   --color-danger: var(--danger);
+
+  --color-series-1: var(--series-1);
+  --color-ord-1: var(--ord-1);
+  --color-ord-2: var(--ord-2);
+  --color-ord-3: var(--ord-3);
+  --color-ord-4: var(--ord-4);
+  --color-grid: var(--grid);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);

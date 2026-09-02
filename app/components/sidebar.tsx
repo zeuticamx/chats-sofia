@@ -8,6 +8,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import {
   AlertTriangle,
   ChevronDown,
+  LayoutDashboard,
   LogOut,
   MessagesSquare,
   Moon,
@@ -24,6 +25,7 @@ import { Badge } from "./badge";
 
 const NAV_ITEMS = [
   { icon: MessagesSquare, label: "Conversaciones", href: "/" },
+  { icon: LayoutDashboard, label: "Dashboard", href: "/dashboard" },
   { icon: AlertTriangle, label: "Alertas", href: "/alertas" },
 ];
 

@@ -13,6 +13,21 @@ function formatTime(iso: string) {
   });
 }
 
+/**
+ * Quita el bloque `[CONTEXTO] ... [/CONTEXTO]` que n8n antepone a los mensajes
+ * del cliente, para que el panel muestre solo el texto que escribió la persona.
+ */
+export function stripContextBlock(text: string): string {
+  if (!text.includes("[CONTEXTO")) return text;
+
+  const cleaned = text
+    .replace(/\[CONTEXTO\][\s\S]*?\[\/CONTEXTO\]/gi, "")
+    .replace(/\[\/?CONTEXTO\]/gi, "")
+    .trim();
+
+  return cleaned.length > 0 ? cleaned : "(sin contenido)";
+}
+
 export function recordsToThreadItems(
   records: ConversationRecord[],
 ): ThreadItem[] {
@@ -26,7 +41,7 @@ export function recordsToThreadItems(
         from: "contact",
         timestamp,
         meta,
-        content: r.message.content,
+        content: stripContextBlock(r.message.content),
       };
     }
 
@@ -34,7 +49,7 @@ export function recordsToThreadItems(
       const toolCall = r.message.tool_calls?.[0];
       const content =
         typeof r.message.content === "string" && r.message.content.length > 0
-          ? r.message.content
+          ? stripContextBlock(r.message.content)
           : toolCall
             ? `→ tool_call: ${toolCall.name}`
             : "(sin contenido)";
@@ -71,10 +86,10 @@ export function extractWaId(sessionId: string): string {
 }
 
 function previewFromMessage(message: ConversationMessage): string {
-  if (message.type === "human") return message.content;
+  if (message.type === "human") return stripContextBlock(message.content);
   if (message.type === "ai") {
     if (typeof message.content === "string" && message.content.length > 0) {
-      return message.content;
+      return stripContextBlock(message.content);
     }
     const toolCall = message.tool_calls?.[0];
     return toolCall ? `→ tool_call: ${toolCall.name}` : "(sin contenido)";
